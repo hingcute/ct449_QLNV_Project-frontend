@@ -24,13 +24,13 @@
     <ErrorMessage name="pass" class="error-feedback" />
     </div>
     <div class="form-group text-center">
-        <button class="btn btn-primary">Đăng Nhập</button>
+        <button class="btn btn-success">Đăng Nhập</button>
         <button
             type="button"
-            class="ml-2 btn btn-danger"
+            class="ml-2 btn btn-success"
             @click="SignUpForm"
         >
-            Đăng Ký
+                Đăng Ký    
         </button>
     </div>
 </Form>
@@ -52,15 +52,14 @@
     data() {
         const userFormSchema = yup.object().shape({
             email: yup
-                .string()
-                .required("Email đăng nhập phải có giá trị.")
-                .min(5, "Email đăng nhập phải ít nhất 2 ký tự.")
-                .max(50, "Email đăng nhập có nhiều nhất 50 ký tự."),
+            .string(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/)
+                .required("Vui lòng nhập Email.")
+                .email("Email không đúng định dạng."),
             pass: yup
                 .string()
-                .required("Mật khẩu phải có giá trị.")
-                .min(5, "Mật khẩu phải ít nhất 5 ký tự.")
-                .max(20, "Mật khẩu có nhiều nhất 20 ký tự."),
+                .required("Vui lòng nhập Mật khẩu")
+                .min(5, "Mật khẩu phải từ 5-20 ký tự.")
+                .max(20, "Mật khẩu phải từ 5-20 ký tự."),
         });
     return {
         // Chúng ta sẽ không muốn hiệu chỉnh props, nên tạo biến cục bộ

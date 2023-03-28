@@ -1,9 +1,9 @@
 <template>
     <div>
-        <footer class="footer rounded-bottom">
-            <nav class="navbar navbar-expand navbar-dark bg-secondary p-1 mb-1 text-white mt-3 rounded-bottom">
+        <footer class="footer rounded-bottom ">
+            <nav class="navbar navbar-expand navbar-dark bg-info p-1 mb-2 text-white mt-2 rounded-bottom">
                 <div class="mr-auto navbar-nav text-center">
-                    <p class="text-light ">Copyright © 2022 | Bản Quyền Thuộc Về Quản Lý Tác Phẩm Văn Học</p>
+                    <p class="text-light ">                                         CÔNG TY TNHH B1909922 - website quản lý nhân sự - project CT449 PTƯDW - design by Hứa Thái Hưng</p>
                 </div>
             </nav>
         </footer>
