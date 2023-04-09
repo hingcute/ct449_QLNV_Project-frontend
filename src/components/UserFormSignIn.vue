@@ -60,6 +60,8 @@
                 .required("Vui lòng nhập Mật khẩu")
                 .min(5, "Mật khẩu phải từ 5-20 ký tự.")
                 .max(20, "Mật khẩu phải từ 5-20 ký tự."),
+         
+
         });
     return {
         // Chúng ta sẽ không muốn hiệu chỉnh props, nên tạo biến cục bộ

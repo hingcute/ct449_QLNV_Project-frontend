@@ -102,9 +102,9 @@
             
             pass: yup
                 .string()
-                .required("Vui lòng nhập Mật khẩu.")
-                .min(5, "Tên tác giả phải ít nhất 5 ký tự.")
-                .max(20, "Tên tác giả có nhiều nhất 20 ký tự."),
+                .required("Vui lòng nhập Mật khẩu")
+                .min(5, "Mật khẩu phải từ 5-20 ký tự.")
+                .max(20, "Mật khẩu phải từ 5-20 ký tự."),
 
              
         });

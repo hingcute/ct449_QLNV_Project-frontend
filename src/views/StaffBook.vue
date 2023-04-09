@@ -3,28 +3,28 @@
         <div class="col-md-10 mx-auto">
             <InputSearch v-model="searchText" />
         </div>
-        <div class="mt-3 col-md-6 mx-auto">
+        <div class="mt-3 col-md-6 mx-auto text-center">
             <h4 class="text-danger">
-                Tác Phẩm
+                Danh Sách Nhân Viên
                 <font-awesome-icon icon="fa-solid fa-books-medical" />
             </h4>
             <StaffList v-if="filteredStaffsCount > 0" :staffs="filteredStaffs"
                 v-model:activeIndex="activeIndex" />
-            <p v-else>Không có tác phẩm nào.</p>
+            <p v-else>Không có nhân viên nào.</p>
 
             <div class="mt-3 row justify-content-around align-items-center">
                 <button class="btn btn-sm btn-success" @click="goToAddStaff">
                     <i class="fas fa-plus"></i> Thêm mới
                 </button>
                 <button class="btn btn-sm btn-danger" @click="removeAllStaffs">
-                    <i class="fas fa-trash"></i> Xóa tất cả
+                    <i class="	fas fa-bell"></i> Xóa tất cả
                 </button>
             </div>
         </div>
         <div class="mt-3 col-md-6">
             <div v-if="activeStaff">
                 <h4 class="text-danger">
-                Chi tiết Liên hệ
+                Chi Tiết Thông Tin Nhân Viên
                 <i class="fas fa-address-card"></i>
                 </h4>
                 <StaffCard :staff="activeStaff" />
@@ -34,8 +34,8 @@
                         params: { id: activeStaff._id },
                     }"
                 >
-                    <span class="mt-2 badge badge-warning">
-                        <i class="fas fa-edit"></i> Hiệu chỉnh</span
+                    <span class="mt-2  badge badge-secondary">
+                        Chỉnh Sửa <i class="fas fa-edit"></i></span
                     >
                 </router-link>
                 
@@ -73,8 +73,8 @@ export default {
         // Chuyển các đối tượng contact thành chuỗi để tiện cho tìm kiếm.
         staffStrings() {
             return this.staffs.map((staff) => {
-                const { name, author, address, year, describe, brief } = staff;
-                return [name, author, address, year, describe, brief].join("");
+                const { name, year, address, phone, describe, brief } = staff;
+                return [name, year, address, phone, describe, brief].join("");
             });
         },
         // Trả về các contact có chứa thông tin cần tìm kiếm.
@@ -105,7 +105,7 @@ export default {
             this.activeIndex = -1;
         },
         async removeAllStaffs() {
-            if (confirm("Bạn muốn xóa tất cả Liên hệ?")) {
+            if (confirm("Bạn muốn xóa tất cả Các Thông tin Nhân viên?")) {
                 try {
                     await StaffService.deleteAll();
                     this.refreshList();

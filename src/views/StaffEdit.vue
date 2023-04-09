@@ -1,10 +1,10 @@
 <template>
     <div v-if="staff" class="page mt-3">
-        <h4 class="p-2 bg-success text-light rounded-pill text-center">Hiệu chỉnh Tác phẩm</h4>
+        <h4 class="p-2 bg-info text-light rounded-pill text-center">Chỉnh sửa Thông tin</h4>
         <StaffForm :staff="staff" @submit:staff="updateStaff" @delete:staff="deleteStaff" />
         <div class="nav-item col">
                 <router-link :to="{ name: 'StaffBook' }" class="navbar-brand">
-                    <b>QUẢN LÝ TÁC PHẨM VĂN HỌC </b>
+                    <b>QUẢN LÝ THÔNG TIN NHÂN VIÊN </b>
                     <i class="fas fa-address-card"></i>
                 </router-link>
         </div>
@@ -48,15 +48,17 @@ export default {
         async updateStaff(data) {
             try {
                 await StaffService.update(this.staff._id, data);
-                this.message = "Tác phẩm được cập nhật thành công.";
+                this.message = "Thông tin đã được cập nhật thành công.";
             } catch (error) {
                 console.log(error);
             }
         },
         async deleteStaff() {
-            if (confirm("Bạn muốn xóa Tác phẩm này?")) {
+            if (confirm("Bạn muốn xóa Thông tin nhân viên này?")) {
                 try {
                     await StaffService.delete(this.staff._id);
+                    this.message = "Thông tin nhân viên đã được xóa.";
+                
                     this.$router.push({ name: "staffbook" });
                 } catch (error) {
                     console.log(error);

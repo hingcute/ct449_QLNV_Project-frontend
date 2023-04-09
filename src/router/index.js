@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 import StaffBook from "@/views/StaffBook.vue";
 import SignIn from "@/views/signin.vue";
+import TodoList from "@/views/TodoList.vue";
 const routes = [
     {
         path: "/",
@@ -11,6 +12,11 @@ const routes = [
         path: "/manager",
         name: "StaffBook",
         component: StaffBook,
+    },
+    {
+        path: "/todo",
+        name: "TodoList",
+        component: TodoList,
     },
     {
         path: "/:pathMatch(.*)*",

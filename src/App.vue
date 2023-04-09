@@ -1,7 +1,7 @@
 <script>
 import AppHeader from "@/components/AppHeader.vue";
-import AppFooter from "./components/AppFooter.vue";
-import AppBody from "./components/AppBody.vue"
+import AppFooter from "@/components/AppFooter.vue";
+import AppBody from "@/components/AppBody.vue"
 export default {
   components: {
     AppHeader,
@@ -12,6 +12,9 @@ export default {
 </script>
 
 <template>
+    <div class="container bg-light" style="border: 2px solid darkcyan;">
+
+      
   <div id="app">
     <AppHeader />
     <div class="container mt-3">
@@ -21,7 +24,7 @@ export default {
     </div>
     <AppFooter />
   </div>
-
+</div>
 </template>
 
 <style>

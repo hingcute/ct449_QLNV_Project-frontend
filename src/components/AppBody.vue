@@ -1,18 +1,9 @@
 <script>
-// export default {
-//     methods: {
-//         goToAddUser() {
-//             this.$router.push({ name: "user.add" });
 
-//         },
-//         Signin() {
-//             this.$router.push({ name: "SignIn" });
-
-//         },
-//     }
-// } 
 </script>
 <template>
+     <div class="container" style="border: 1px solid blue;">
+        <div class="row">
 
         <div class="col text-center mt-2">
             <b>
@@ -23,8 +14,10 @@
         
   <li class="">Tìm kiếm nhân viên</li>
   <li class="">Thêm, sửa, xóa thông tin nhân viên</li>
-  <li class="">Chấm công nhân viên</li>
+  <li class="">Lịch biểu công ty</li>
 
 
+</div>
+</div>
 </div>
 </template>
