@@ -5,7 +5,7 @@
             :user="user"
             @submit:user="addUser"
         />
-        <p>{{ message }}</p>
+        <p class="alert alert-success">{{ message }}</p>
     </div>
 </template>
 <script>

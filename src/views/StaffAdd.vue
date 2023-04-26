@@ -11,7 +11,7 @@
                     <i class="fas fa-address-card"></i>
                 </router-link>
         </div>
-        <p>{{ message }}</p>
+        <p class="alert alert-success">{{ message }}</p>
     </div>
 </template>
 <script>
